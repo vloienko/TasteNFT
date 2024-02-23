@@ -6,7 +6,7 @@ import './creators.scss';
 
 const Creators = (props) => {
    return (
-      <div className="creators">
+      <a href='/TasteNFT/artwork/' className="creators">
          <div className="creators__image">
             <img src={props.img} alt="Creators image" />
          </div>
@@ -15,7 +15,7 @@ const Creators = (props) => {
             <span className="creators__user">{props.user}</span>
             <p className="creators__text">{props.text}</p>
          </div>
-      </div>
+      </a>
    );
 }
  

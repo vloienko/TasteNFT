@@ -7,7 +7,7 @@ import './user-block.scss';
 
 const UserBlock = () => {
    return (
-      <div className="user-block">
+      <a href='/TasteNFT/my-profile/' className="user-block">
          <div className="user-block__avatar">
             <img src={userImg} alt="User photo" />
          </div>
@@ -15,7 +15,7 @@ const UserBlock = () => {
             <span className="user-block__name">User Name</span>
             <span className="user-block__nick">@username</span>
          </div>
-      </div>
+      </a>
    );
 }
  
