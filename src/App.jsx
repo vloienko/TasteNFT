@@ -19,10 +19,10 @@ function App() {
           <Header />
           <main className="page">
             <Routes>
-              <Route path="/" element={<MainPage />} />
-              <Route path="/artwork" element={<ArtworkPage />} />
-              <Route path="/creator-profile" element={<CreatorProfile />} />
-              <Route path="/my-profile" element={<MyProfile />} />
+              <Route path="/TasteNFT" element={<MainPage />} />
+              <Route path="/TasteNFT/artwork" element={<ArtworkPage />} />
+              <Route path="/TasteNFT/creator-profile" element={<CreatorProfile />} />
+              <Route path="/TasteNFT/my-profile" element={<MyProfile />} />
             </Routes>
           </main>
         </Router>

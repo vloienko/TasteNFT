@@ -13,7 +13,7 @@ import HeaderMain from './HeaderMain';
 function Header() {
    const location = useLocation();
 
-   if (location.pathname === '/my-profile') {
+   if (location.pathname === '/TasteNFT/my-profile') {
       return <HeaderAutorized />;
    } else {
       return <HeaderMain />;
