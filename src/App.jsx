@@ -19,10 +19,10 @@ function App() {
           <Header />
           <main className="page">
             <Routes>
-              <Route path="./" element={<MainPage />} />
-              <Route path="./artwork" element={<ArtworkPage />} />
-              <Route path="./creator-profile" element={<CreatorProfile />} />
-              <Route path="./my-profile" element={<MyProfile />} />
+              <Route path="/" element={<MainPage />} />
+              <Route path="/artwork" element={<ArtworkPage />} />
+              <Route path="/creator-profile" element={<CreatorProfile />} />
+              <Route path="/my-profile" element={<MyProfile />} />
             </Routes>
           </main>
         </Router>
