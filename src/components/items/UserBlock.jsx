@@ -7,7 +7,7 @@ import './user-block.scss';
 
 const UserBlock = () => {
    return (
-      <a href='/TasteNFT/my-profile/' className="user-block">
+      <a href='/TasteNFT/my-profile' className="user-block">
          <div className="user-block__avatar">
             <img src={userImg} alt="User photo" />
          </div>
