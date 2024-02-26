@@ -10,7 +10,7 @@ function Header() {
       <header className="header">
          <div className="header__container">
             <div className="header__body">
-               <a className="header__logo" href="/../">
+               <a className="header__logo" href="https://vloienko.github.io/TasteNFT/">
                   <img src={logoImg} alt="Logo" />
                </a>
                <div className="header__search">
