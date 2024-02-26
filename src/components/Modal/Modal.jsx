@@ -21,7 +21,7 @@ export const Modal = ({ active, setActive, children }) => {
          document.body.style.overflow = 'unset';
       }
 
-      // Це повернення викликається при розмонтовуванні компоненту, щоб очистити зміни
+      // Це повернення викликається при розгортанні компоненту, щоб очистити зміни
       return () => {
          document.body.style.overflow = 'unset';
       };

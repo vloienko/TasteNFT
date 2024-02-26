@@ -1,5 +1,6 @@
 {
-  "name": "vite-project",
+  "name": "TasteNFT",
+  "homepage": "https://vloienko.github.io/TasteNFT/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -12,7 +13,7 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.21.3",
+    "react-router-dom": "^6.22.1",
     "sass": "^1.70.0",
     "swiper": "^11.0.5"
   },

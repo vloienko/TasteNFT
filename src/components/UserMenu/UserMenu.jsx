@@ -7,6 +7,8 @@ import React, { useState } from 'react';
 
 import { Modal } from '../Modal/Modal';
 import { EditYourProfile } from '../Modal/Content/EditYourProfile';
+import { BalanceSettings, } from '../Modal/Content/BalanceSettings';
+
 
 
 // Image
@@ -20,7 +22,7 @@ const UserMenu = () => {
    // Додавання або видалення класу в залежності від стану open
    const menuClass = open ? "user-menu user-menu--open" : "user-menu";
 
-   const [modalProfileActive, setModalProfileActive] = useState(true);
+   const [modalProfileActive, setModalProfileActive] = useState(false);
    const [modalBalanceActive, setModalBalanceActive] = useState(false);
 
    const handleMenuClick = (menuName) => {
@@ -88,7 +90,7 @@ const UserMenu = () => {
             <EditYourProfile />
          </Modal>
          <Modal active={modalBalanceActive} setActive={setModalBalanceActive}>
-
+            <BalanceSettings />
          </Modal>
       </>
    );
