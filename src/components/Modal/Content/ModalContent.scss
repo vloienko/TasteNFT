@@ -89,15 +89,106 @@
          grid-column: 2 span;
       }
 
-      &.image {
-         border-radius: 16px;
-         box-shadow: 0px 25px 40px 0px rgba(0, 0, 0, 0.05);
+      
+      & .file-image {
+         margin-top: 8px;
+         border-radius: 8px;
          padding: 20px;
+         max-width: 294px;
+         width: 100%;
+         background: var(--background);
+      }
+
+      & .file-image__item {
+         display: flex;
+         align-items: flex-start;
+      }
+
+      & .file-image__circle {
+         position: relative;
 
          input {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 80px;
+            height: 80px;
+            opacity: 0;
+            font-size: 0;
+            cursor: pointer;
 
+            margin: 0;
+            padding: 0;
          }
 
+         & .file-image__button {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 1px solid var(--background);
+            overflow: hidden;
+            background: url('../../../img/icon/file-image.jpg') center/cover no-repeat;
+         }
+   
+         & .file-image__preview {
+            display: inline-block;
+   
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 80px;
+            height: 80px;
+            cursor: pointer;
+            border-radius: 50%;
+            overflow: hidden;
+            pointer-events: none;
+   
+            img {
+               width: 100%;
+               height: 100%;
+               object-fit: cover;
+               object-position: center;
+            }
+         }
+      }
+
+      & .file-image__info {
+         padding: 8px 0;
+         margin-left: 16px;
+         display: grid;
+         gap: 5px;
+
+         & .file-image__name,
+         & .file-image__size,
+         & .file-image__delete {
+            font-size: 16px;
+            font-weight: 500;
+         }
+
+         & .file-image__name,
+         & .file-image__size {
+            color: var(--light-gray);
+         }
+
+         & .file-image__delete {
+            color: var(--color-warning);
+            padding-left: 16px;
+            position: relative;
+
+            &::before {
+               position: absolute;
+               content: '';
+               top: 50%;
+               left: 0;
+               width: 11px;
+               height: 11px;
+               background: url('../../../img/icon/close-file-image.svg') center/cover no-repeat;
+               transform: translateY(-50%);
+            }
+         }
       }
    }
 

@@ -3,13 +3,14 @@ import './ModalContent.scss';
 
 
 // Import
-
+import ImageUploader from './ImageUploader.jsx';
 
 // Image
 import twitch from '../../../img/icon/social/social-1.svg';
 import instagram from '../../../img/icon/social/social-2.svg';
 import twitter from '../../../img/icon/social/social-3.svg';
 import onlyfans from '../../../img/icon/social/social-4.svg';
+
 
 
 export const EditYourProfile = () => {
@@ -39,10 +40,9 @@ export const EditYourProfile = () => {
                   <label htmlFor="bio">BIO</label>
                   <textarea id="bio" name="bio" className="height-big"></textarea>
                </div>
-               <div className="edit-profile__field image">
-                  <label htmlFor="image">Profile image</label>
-                  <input id="image" type="image" className="height-big" />
-               </div>
+
+               <ImageUploader />
+
                <div className="edit-profile__field"></div>
                <div className="edit-profile__field">
                   <span>Contacts</span>
