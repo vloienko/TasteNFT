@@ -49,6 +49,11 @@
       row-gap: 24px;
 
       align-items: center;
+
+      @media (max-width:$mobileCustom){
+         grid-template-columns: 1fr;
+         row-gap: 10px;
+      }
    }
 
    &__field {
@@ -87,6 +92,10 @@
 
       &:nth-child(5), &:last-child {
          grid-column: 2 span;
+
+         @media (max-width:$mobileCustom){
+            grid-column: auto;
+         }
       }
 
       

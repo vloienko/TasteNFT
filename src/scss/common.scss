@@ -93,12 +93,14 @@
 
    @media (any-hover: hover){
       &:hover{
-         opacity: 0.8;
+         background: #fff;
+         color: var(--button-hover);
       }
    }
 
    &:active {
-      
+      background: #fff;
+      color: var(--button-hover);
    }
 }
 

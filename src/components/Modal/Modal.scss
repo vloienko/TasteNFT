@@ -29,6 +29,7 @@
       max-width: 653px;
       width: 100%;
       height: max-content;
+      margin-bottom: 70px;
 
       transform: scale(0.5);
       transition: all .3s ease-in-out;
@@ -36,10 +37,15 @@
       position: absolute;
       top: 70px;
       left: 50%;
+      bottom: 70px;
       translate: -50%;
 
       &.active {
          transform: scale(1);
+      }
+
+      @media (max-width:$mobileCustom){
+         padding: 25px 18px;
       }
    }
 
