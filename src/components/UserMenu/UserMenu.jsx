@@ -7,7 +7,7 @@ import React, { useState } from 'react';
 
 import { Modal } from '../Modal/Modal';
 import { EditYourProfile } from '../Modal/Content/EditYourProfile';
-import { BalanceSettings, } from '../Modal/Content/BalanceSettings';
+import BalanceSettings from '../Modal/Content/BalanceSettings';
 
 
 
@@ -24,6 +24,7 @@ const UserMenu = () => {
 
    const [modalProfileActive, setModalProfileActive] = useState(false);
    const [modalBalanceActive, setModalBalanceActive] = useState(false);
+   
 
    const handleMenuClick = (menuName) => {
       setOpen(false); // Закриття меню для будь-якої кнопки.

@@ -27,6 +27,7 @@
    padding: 12px 32px;
    max-width: max-content;
    align-self: center;
+   height: 40px;
 }
 
 
@@ -257,7 +258,6 @@
 }
 
 
-
 .balance-settings {
    @extend %flex-column;
 
@@ -269,6 +269,10 @@
       margin-top: 25px;
       @extend %grid-column;
       gap: 16px;
+
+      @media (max-width:$mobileCustom){
+         grid-template-columns: 1fr;
+      }
    }
 
    &__block {
@@ -278,6 +282,10 @@
       border-radius: 16px;
       background: var(--background);
       box-shadow: 0px 25px 40px 0px rgba(0, 0, 0, 0.05);
+
+      @media (max-width:$mobileCustom){
+         max-width: 100%;
+      }
    }
 
    &__holder {
@@ -319,4 +327,103 @@
    }
 
    
+}
+
+
+.internal-modal {
+   @extend %flex-column;
+
+   &__title {
+      @extend %modal-title;
+   }
+
+   &__form {
+      margin-top: 32px;
+      @extend %flex-column;
+   }
+   
+   &__body {
+      display: flex;
+      align-items: flex-end;
+      font-size: 16px;
+
+      @media (max-width:$mobileSmall){
+         justify-content: space-between; 
+      }
+   }
+
+   &__field {
+
+      label {
+         @extend %modal-input-title;
+      }
+
+   }
+
+   &__item {
+      margin-top: 8px;
+      max-width: 176px;
+      width: 100%;
+      position: relative;
+
+      &::after {
+         position: absolute;
+         content: 'BNB';
+         top: 50%;
+         right: 14px;
+         transform: translateY(-50%);
+
+         @extend %modal-input-title;
+      }
+
+      input {
+         border-radius: 8px;
+         background: var(--background);
+         padding: 10px 55px 10px 16px;
+         color: var(--text-white);
+         width: 100%;
+      }
+   }
+
+   &__numbers {
+      @extend %flex-center;
+      padding: 10px 0;
+      margin-left: 11px;
+
+      @media (max-width:$mobileSmall){
+         flex-direction: column;
+         align-items: flex-end;
+         padding: 0;
+      }
+   }
+
+   &__nft {
+      @extend %flex-center;
+
+      img {
+         width: 19px;
+         height: 19px;
+      }
+
+      span {
+         display: inline-block;
+         margin-left: 5px;
+      }
+   }
+
+   &__dollar {
+      margin-left: 11px;
+      @extend %modal-input-title;
+
+      @media (max-width:$mobileSmall){
+         margin: 5px 0px 0px 0px;
+      }
+   }
+
+   &__save {
+      margin-top: 32px;
+      @extend %modal-button;
+      max-width: 157px;
+   }
+
 }

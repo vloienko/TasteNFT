@@ -5,6 +5,7 @@ import './Modal.scss';
 // Import
 import React, { useEffect } from 'react';
 
+
 // Image
 import IconClosed from '../../img/icon/closed.svg';
 

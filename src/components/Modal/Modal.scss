@@ -11,8 +11,8 @@
    z-index: 5;
    @extend %flex-center;
 
-   opacity: 0;
    pointer-events: none;
+   opacity: 0;
    transition: all .6s ease-in-out;
    overflow: scroll;
    
@@ -29,9 +29,10 @@
       max-width: 653px;
       width: 100%;
       height: max-content;
-      margin-bottom: 70px;
-
-      transform: scale(0.5);
+      
+      pointer-events: none;
+      opacity: 0;
+      transform: scale(0);
       transition: all .3s ease-in-out;
 
       position: absolute;
@@ -39,9 +40,11 @@
       left: 50%;
       bottom: 70px;
       translate: -50%;
-
+      
       &.active {
          transform: scale(1);
+         opacity: 1;
+         pointer-events: all;
       }
 
       @media (max-width:$mobileCustom){
@@ -49,14 +52,39 @@
       }
    }
 
+   &__content.internal {
+      top: 0;
+   }
+
    &__closed {
       position: absolute;
       top: 51px;
       right: 24px;
 
+      @media (max-width:$mobileCustom){
+         top: 32px;
+         right: 18px;
+      }
+
       img {
          width: 17px;
          height: 16px;
+      }
+   }
+
+   &__back {
+      position: absolute;
+      top: 47px;
+      left: 32px;
+
+      @media (max-width:$mobileCustom){
+         top: 28px;
+         left: 18px;
+      }
+
+      img {
+         width: 24px;
+         height: 24px;
       }
    }
 }
