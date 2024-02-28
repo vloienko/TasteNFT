@@ -3,13 +3,12 @@ import './ModalContent.scss';
 
 
 // Import
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import { InternalModal } from '../InternalModal';
 
 // Import модальних вікон
-import { WithdrawModal } from './BalanceSettingsAll/WithdrawModal';
-import { SwapToTasteModal } from './BalanceSettingsAll/SwapToTasteModal';
+import { WithdrawModal, SwapToTasteModal, DepositModal, WithdrawModalBNB } from './BalanceSettingsAllModal';
 
 
 // Image
@@ -18,9 +17,27 @@ import binance from '../../../img/icon/binance.svg';
 
 
 
-const BalanceSettings = () => {
+const BalanceSettings = ({ firstModalActive, setFirstModalActive }) => {
    const [withdrawModalActive, setWithdrawModalActive] = useState(false);
    const [swapToTasteModalActive, setSwapToTasteModalActive] = useState(false);
+   const [depositModalActive, setDepositModalActive] = useState(false);
+   const [withdrawModalBNBActive, setWithdrawModalBNBActive] = useState(false);
+
+
+   // Функція для закриття першого модального вікна при відкритті другого
+   useEffect(() => {
+      if (firstModalActive === 'balanceSettings') {
+         setWithdrawModalActive(false);
+         setSwapToTasteModalActive(false);
+         setDepositModalActive(false);
+         setWithdrawModalBNBActive(false);
+      }
+   }, [firstModalActive]);
+
+   const handleCloseFirstModal = () => {
+      setFirstModalActive(null);
+   };
+
 
    return (
       <div className="balance-settings">
@@ -41,21 +58,31 @@ const BalanceSettings = () => {
                   <span>1.5M</span>
                </div>
                <div className="balance-settings__button-box">
-                  <button type="button" onClick={() => setSwapToTasteModalActive(true)}>Swap to TASTE</button>
-                  <button type="button">Deposit</button>
-                  <button type="button">Withdraw</button>
+                  <button type="button" onClick={() => setSwapToTasteModalActive(true)}>Swap to BNB</button>
+                  <button type="button" onClick={() => setDepositModalActive(true)}>Deposit</button>
+                  <button type="button" onClick={() => setWithdrawModalBNBActive(true)}>Withdraw</button>
                </div>
             </div>
          </div>
 
          {/* Модальне вікно "Withdraw" */}
-         <InternalModal active={withdrawModalActive} setActive={setWithdrawModalActive}>
+         <InternalModal active={withdrawModalActive} setActive={setWithdrawModalActive} onClose={handleCloseFirstModal}>
             <WithdrawModal />
          </InternalModal>
 
          {/* Модальне вікно "Swap to TASTE" */}
-         <InternalModal active={swapToTasteModalActive} setActive={setSwapToTasteModalActive}>
+         <InternalModal active={swapToTasteModalActive} setActive={setSwapToTasteModalActive} onClose={handleCloseFirstModal}>
             <SwapToTasteModal />
+         </InternalModal>
+
+         {/* Модальне вікно "Deposit to BNB" */}
+         <InternalModal active={depositModalActive} setActive={setDepositModalActive} onClose={handleCloseFirstModal}>
+            <DepositModal />
+         </InternalModal>
+
+          {/* Модальне вікно "Withdraw BNB" */}
+          <InternalModal active={withdrawModalBNBActive} setActive={setWithdrawModalBNBActive} onClose={handleCloseFirstModal}>
+            <WithdrawModalBNB />
          </InternalModal>
 
       </div>

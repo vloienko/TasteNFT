@@ -393,11 +393,11 @@
       @media (max-width:$mobileSmall){
          flex-direction: column;
          align-items: flex-end;
-         padding: 0;
       }
    }
 
    &__nft {
+      margin-right: 11px;
       @extend %flex-center;
 
       img {
@@ -409,15 +409,14 @@
          display: inline-block;
          margin-left: 5px;
       }
+
+      @media (max-width:$mobileSmall){
+         margin: 0px 0px 5px 0px;
+      }
    }
 
    &__dollar {
-      margin-left: 11px;
       @extend %modal-input-title;
-
-      @media (max-width:$mobileSmall){
-         margin: 5px 0px 0px 0px;
-      }
    }
 
    &__save {

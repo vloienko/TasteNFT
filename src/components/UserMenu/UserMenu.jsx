@@ -10,7 +10,6 @@ import { EditYourProfile } from '../Modal/Content/EditYourProfile';
 import BalanceSettings from '../Modal/Content/BalanceSettings';
 
 
-
 // Image
 import userImg from './../../img/users/user-1.jpg';
 
@@ -24,7 +23,8 @@ const UserMenu = () => {
 
    const [modalProfileActive, setModalProfileActive] = useState(false);
    const [modalBalanceActive, setModalBalanceActive] = useState(false);
-   
+   const [firstModalActive, setFirstModalActive] = useState(null); // Для збереження стану відкриття першого модального вікна
+
 
    const handleMenuClick = (menuName) => {
       setOpen(false); // Закриття меню для будь-якої кнопки.
@@ -35,6 +35,7 @@ const UserMenu = () => {
             break;
          case 'Balance settings':
             setModalBalanceActive(true);
+            setFirstModalActive('balanceSettings'); // Встановлюємо стан для першого модального вікна
             break;
          case 'Log out':
             // Логіка для виходу з системи
@@ -43,6 +44,12 @@ const UserMenu = () => {
             // Дія за умовчанням, якщо потрібно
             break;
       }
+   };
+
+   // Функція для закриття першого модального вікна при відкритті другого
+   const handleCloseFirstModal = () => {
+      setModalProfileActive(false);
+      setModalBalanceActive(false);
    };
 
 
@@ -90,8 +97,8 @@ const UserMenu = () => {
          <Modal active={modalProfileActive} setActive={setModalProfileActive}>
             <EditYourProfile />
          </Modal>
-         <Modal active={modalBalanceActive} setActive={setModalBalanceActive}>
-            <BalanceSettings />
+         <Modal active={modalBalanceActive} setActive={setModalBalanceActive} onClose={handleCloseFirstModal}>
+            <BalanceSettings firstModalActive={firstModalActive} setFirstModalActive={setFirstModalActive} />
          </Modal>
       </>
    );
