@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 
 // Styles
-import './creators.scss';
+import './Creators.scss';
 
 
 const Creators = (props) => {

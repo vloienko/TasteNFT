@@ -1,5 +1,5 @@
 // Style
-import "./header.scss";
+import "./Header.scss";
 
 
 // Import

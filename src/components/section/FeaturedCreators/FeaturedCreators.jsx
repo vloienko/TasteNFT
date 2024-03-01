@@ -1,4 +1,4 @@
-import CreatorsSlider from '../../creatorsSlider/CreatorsSlider';
+import CreatorsSlider from '../../CreatorsSlider/CreatorsSlider';
 
 
 // Styles

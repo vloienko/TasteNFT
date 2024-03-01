@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 
 // Styles
-import './card.scss';
+import './Card.scss';
 
 
 const Card = (props) => {

@@ -1,5 +1,5 @@
 /* eslint-disable react-refresh/only-export-components */
-import CardGallery from '../../cardGallery/CardGallery';
+import CardGallery from '../../CardGallery/CardGallery';
 
 
 // Styles

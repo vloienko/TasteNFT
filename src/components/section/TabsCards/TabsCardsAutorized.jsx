@@ -1,9 +1,9 @@
 // Style
-import './tabs-cards.scss'
+import './TabsCards.scss';
 
 
 // Import
-import CardGallery from '../../cardGallery/CardGallery';
+import CardGallery from '../../CardGallery/CardGallery';
 
 
 const TabsCards = () => {

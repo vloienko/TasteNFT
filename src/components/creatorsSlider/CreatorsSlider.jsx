@@ -1,5 +1,5 @@
 // Styles
-import './creators-slider.scss';
+import './CreatorsSlider.scss';
 
 
 

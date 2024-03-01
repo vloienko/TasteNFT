@@ -1,4 +1,4 @@
-import CardGallery from '../../cardGallery/CardGallery';
+import CardGallery from '../../CardGallery/CardGallery';
 
 
 // Styles
