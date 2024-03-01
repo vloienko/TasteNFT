@@ -368,7 +368,6 @@
 
       &::after {
          position: absolute;
-         content: 'BNB';
          top: 50%;
          right: 14px;
          transform: translateY(-50%);
@@ -376,10 +375,31 @@
          @extend %modal-input-title;
       }
 
+      &.bnb {
+         &::after {
+            content: 'BNB';
+         }
+
+         input {
+            padding-right: 55px;
+         }
+      }
+
+      &.taste {
+         &::after {
+            content: 'TASTE';
+         }
+
+         input {
+            padding-right: 70px;
+         }
+      }
+
+      
       input {
          border-radius: 8px;
          background: var(--background);
-         padding: 10px 55px 10px 16px;
+         padding: 10px 0px 10px 16px;
          color: var(--text-white);
          width: 100%;
       }

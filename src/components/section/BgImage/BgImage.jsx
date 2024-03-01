@@ -1,11 +1,23 @@
-import mainBG from './../../../img/main-bg.jpg';
-
-
-// Styles
+// Style
 import './bg-image.scss';
 
 
+// Import
+import React, { useState } from 'react';
+
+import { Modal } from '../../Modal/Modal';
+import { PlaceABid } from '../../Modal/Content/OtherModal';
+
+
+// Image
+import mainBG from './../../../img/main-bg.jpg';
+
+
+
 const BgImage = () => {
+   const [modalPlaceABidActive, setModalPlaceABidActive] = useState(false);
+     
+
    return (
       <div className="bg-image margin-top">
          <div className="bg-image__container">
@@ -31,13 +43,15 @@ const BgImage = () => {
                      </div>
                   </div>
                   <div className="bg-image__box">
-                     <a className="bg-image__link" href="#">Place a bid</a>
+                     <button className="bg-image__popup" type="button" onClick={() => setModalPlaceABidActive(true)}>Place a bid</button>
                   </div>
                </div>
             </div>
          </div>
+         <Modal active={modalPlaceABidActive} setActive={setModalPlaceABidActive}>
+            <PlaceABid />
+         </Modal>
       </div>
-      
    );
 }
  

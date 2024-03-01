@@ -19,7 +19,7 @@ export const WithdrawModal = () => {
             <div className="internal-modal__body">
                <div className="internal-modal__field">
                   <label htmlFor="totalBNB">You will get</label>
-                  <div className="internal-modal__item">
+                  <div className="internal-modal__item taste">
                      <input id="totalBNB" type="number" placeholder='10000000' />
                   </div>
                </div>
@@ -46,7 +46,7 @@ export const SwapToTasteModal = () => {
             <div className="internal-modal__body">
                <div className="internal-modal__field">
                   <label htmlFor="totalBNB">You will get</label>
-                  <div className="internal-modal__item">
+                  <div className="internal-modal__item bnb">
                      <input id="totalBNB" type="number" placeholder='10000000' />
                   </div>
                </div>
@@ -73,7 +73,7 @@ export const DepositModal = () => {
             <div className="internal-modal__body">
                <div className="internal-modal__field">
                   <label htmlFor="totalBNB">You will get</label>
-                  <div className="internal-modal__item">
+                  <div className="internal-modal__item bnb">
                      <input id="totalBNB" type="number" placeholder='10000000' />
                   </div>
                </div>
@@ -100,7 +100,7 @@ export const WithdrawModalBNB = () => {
             <div className="internal-modal__body">
                <div className="internal-modal__field">
                   <label htmlFor="totalBNB">You will get</label>
-                  <div className="internal-modal__item">
+                  <div className="internal-modal__item bnb">
                      <input id="totalBNB" type="number" placeholder='10000000' />
                   </div>
                </div>
