@@ -7,7 +7,7 @@ import './card.scss';
 const Card = (props) => {
 
    return (
-      <div className="card">
+      <a className="card" href="/TasteNFT/artwork">
          <div className="card__content">
             <img className="card__image" src={props.img} alt="Card Image" />
             <div className="card__block">
@@ -38,7 +38,7 @@ const Card = (props) => {
                </div>
             </div>
          </div>
-      </div>
+      </a>
    );
 }
 
