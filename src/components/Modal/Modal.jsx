@@ -3,15 +3,18 @@ import './Modal.scss';
 
 
 // Import
-import React, { useEffect } from 'react';
+import React, { createContext, useState, useEffect } from 'react';
 
 
 // Image
 import IconClosed from '../../img/icon/closed.svg';
 
 
+export const ModalContext = createContext();
 
 export const Modal = ({ active, setActive, children }) => {
+   const [connectedClass, setConnectedClass] = useState('');
+
 
    useEffect(() => {
       if (active) {
@@ -28,15 +31,18 @@ export const Modal = ({ active, setActive, children }) => {
       };
    }, [active]); // Залежність від стану активності модального вікна
 
+
    return (
-      <div className={active ? "modal active" : "modal"} onClick={() => setActive(false)}>
-         <div className={active ? "modal__content active" : "modal__content"} onClick={e => e.stopPropagation()}>
-            <button className="modal__closed" type="button" onClick={() => setActive(false)}>
-               <img src={IconClosed} alt="Icon closed" />
-            </button>
-            {children}
-            {/* Вміст модального вікна */}
+      <ModalContext.Provider value={{ connectedClass, setConnectedClass }}>
+         <div className={active ? "modal active" : "modal"} onClick={() => setActive(false)}>
+            <div className={active ? `modal__content active ${connectedClass}` : `modal__content ${connectedClass}`} onClick={e => e.stopPropagation()}>
+               <button className="modal__closed" type="button" onClick={() => setActive(false)}>
+                  <img src={IconClosed} alt="Icon closed" />
+               </button>
+               {children}
+               {/* Вміст модального вікна */}
+            </div>
          </div>
-      </div>
+      </ModalContext.Provider>
    );
 };
